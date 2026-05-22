@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Breaches — KnowYourCyber</title>
+    <meta name="description" content="Browse thousands of catalogued data breaches. Search by name and filter by data type." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">
+                <div class="shield">&#x1F6E1;</div>
+                KnowYourCyber
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="breaches.html" class="active">Data Breaches</a></li>
+                <li><a href="tips.html">Stay Safe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header style="padding: 50px 1.5rem 30px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <h1 style="color:#fff; margin-bottom:0.5rem;">Data Breach Database</h1>
+            <p style="color:var(--muted); max-width:580px;">
+                Browse breaches sourced from the HaveIBeenPwned public API. Each entry shows
+                what data was exposed and when. Click any card for full details.
+            </p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="section" style="padding-top:40px;">
+        <div class="container">
+
+            <!-- Search and filter controls -->
+            <div class="search-bar-wrap" role="search">
+                <input
+                    type="search"
+                    id="search"
+                    class="search-input"
+                    placeholder="Search by name or domain (e.g. LinkedIn)..."
+                    aria-label="Search breaches"
+                />
+
+                <select id="filter-type" class="filter-select" aria-label="Filter by data type">
+                    <option value="">All data types</option>
+                    <option value="email">Email addresses</option>
+                    <option value="password">Passwords</option>
+                    <option value="phone">Phone numbers</option>
+                    <option value="name">Names</option>
+                    <option value="address">Physical addresses</option>
+                    <option value="credit">Credit cards</option>
+                </select>
+            </div>
+
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+
+
+            <div class="spinner-wrap" id="spinner">
+                <div class="spinner"></div>
+                <p>Loading breach data...</p>
+            </div>
+
+            <!-- Breach cards grid — populated by breaches.js -->
+            <div class="breach-grid" id="breach-grid" style="display:none;"></div>
+
+            <!-- Pagination controls — built by breaches.js -->
+            <div class="pagination" id="pagination" aria-label="Pagination"></div>
+
+        </div>
+    </main>
+
+    <!-- ===== DETAIL MODAL ===== -->
+    <!-- Appears when a breach card is clicked. JS populates modal-body. -->
+    <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Breach details">
+        <div class="modal-box" id="modal-body">
+            <!-- content injected by openModal() in breaches.js -->
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <nav aria-label="Footer navigation">
+            <a href="../index.html">Home</a>
+            <a href="breaches.html">Data Breaches</a>
+            <a href="tips.html">Stay Safe</a>
+        </nav>
+        <p>&copy; 2025 KnowYourCyber. A charitable organisation promoting cyber awareness. By Samiullah Jamshaid Khan</p>
+        <p style="margin-top:0.4rem;">
+            Breach data sourced from
+            <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer">HaveIBeenPwned</a>
+        </p>
+    </footer>
+
+    <!-- main.js handles nav; breaches.js handles everything on this page -->
+    <script src="../js/main.js"></script>
+    <script src="../js/breaches.js"></script>
+
+</body>
+</html>
