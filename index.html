@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnowYourCyber — Stay Safe Online</title>
+    <meta name="description" content="A free database of data breaches and cyber security tips. Check if your accounts have been compromised." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="shield">&#x1F6E1;</div>
+                KnowYourCyber
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/breaches.html">Data Breaches</a></li>
+                <li><a href="pages/tips.html">Stay Safe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-inner">
+
+            <!-- Left: text content -->
+            <div class="hero-text">
+                <span class="hero-label">&#x1F512; Free &amp; Nonprofit</span>
+                <h1>Has your data been <em>compromised?</em></h1>
+                <p>
+                    KnowYourCyber tracks thousands of data breaches so you can find out
+                    if your passwords or personal info have been exposed — and what to do about it.
+                </p>
+                <div class="hero-buttons">
+                    <a href="pages/breaches.html" class="btn btn-primary">Search Breaches &rarr;</a>
+                    <a href="pages/tips.html" class="btn btn-outline">Stay Safe Tips</a>
+                </div>
+            </div>
+
+            <!-- Right: animated terminal (JS in main.js populates this) -->
+            <div class="hero-visual">
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-title">breach_scan.sh</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-body"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ===== STATS STRIP ===== -->
+    <!-- Numbers count up via IntersectionObserver in main.js -->
+    <section class="stats-strip" aria-label="Key statistics">
+        <div class="container">
+            <div class="stat-item">
+                <span class="stat-num" data-target="12400">0</span>
+                <span class="stat-label">Breaches Catalogued</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num" data-target="9300000000">0</span>
+                <span class="stat-label">Accounts Exposed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num" data-target="47">0</span>
+                <span class="stat-label">New This Month</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num" data-target="153">0</span>
+                <span class="stat-label">Countries Affected</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="section-head">
+                <h2 id="about-heading">What is KnowYourCyber?</h2>
+                <p>We're a charitable organisation making cyber security accessible to everyone — not just IT professionals.</p>
+            </div>
+
+            <div class="cards-row">
+                <div class="card">
+                    <div class="card-icon blue">&#x1F4CB;</div>
+                    <h3>Our Database</h3>
+                    <p>
+                        We catalogue breaches from across the internet, including what data was
+                        leaked, when it happened, and how many people were affected.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon red">&#x1F513;</div>
+                    <h3>Why It Matters</h3>
+                    <p>
+                        When your email or password appears in a breach, attackers can use it
+                        to access your other accounts through credential stuffing.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon green">&#x2705;</div>
+                    <h3>What You Can Do</h3>
+                    <p>
+                        Use our tips page to learn how to create strong passwords, set up
+                        two-factor authentication, and react quickly if you're exposed.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon warn">&#x1F193;</div>
+                    <h3>Completely Free</h3>
+                    <p>
+                        As a charity, everything we offer is free. No ads, no subscription,
+                        no data selling. Just public cyber safety information.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ALERT BANNER ===== -->
+    <section class="section" style="padding-top:0;" aria-label="Recent news">
+        <div class="container">
+            <div class="alert-banner" role="alert">
+                <span class="alert-icon">&#x1F6A8;</span>
+                <div>
+                    <strong>Recent breach alert:</strong> A large-scale credential leak was detected in early 2025 affecting multiple major platforms.
+                    <a href="pages/breaches.html">Browse the full database &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPLAINER VIDEO ===== -->
+    <!-- Rich media requirement: embedded YouTube video -->
+    <section class="section" style="padding-top:0;" aria-labelledby="video-heading">
+        <div class="container">
+            <div class="section-head">
+                <h2 id="video-heading">What is a data breach?</h2>
+                <p>New to this? This short video explains what a data breach is and why it matters.</p>
+            </div>
+            <div class="video-wrap" style="max-width:700px; margin:0 auto;">
+                <iframe
+                    src="https://www.youtube.com/embed/iBFrS7FCvGU"
+                    title="What is a data breach? — cybersecurity explainer (YouTube)"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA STRIP ===== -->
+    <section
+        class="section"
+        style="background:var(--bg2); padding:60px 1.5rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border);"
+        aria-label="Call to action">
+        <div class="container" style="text-align:center;">
+            <h2 style="color:#fff; margin-bottom:0.8rem;">Ready to check your accounts?</h2>
+            <p style="color:var(--muted); margin-bottom:1.8rem; max-width:480px; margin-left:auto; margin-right:auto;">
+                Browse our full breach database — updated regularly with verified incidents from around the world.
+            </p>
+            <a href="pages/breaches.html" class="btn btn-primary">View All Breaches</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="pages/breaches.html">Data Breaches</a>
+            <a href="pages/tips.html">Stay Safe</a>
+        </nav>
+        <p>&copy; 2025 KnowYourCyber. A charitable organisation promoting cyber awareness. By Samiullah Jamshaid Khan</p>
+        <p style="margin-top:0.4rem;">
+            Breach data sourced from <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer">HaveIBeenPwned</a>.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
